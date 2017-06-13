@@ -10,6 +10,5 @@ public class TaxExemptedItem extends Item {
         itemName = item.itemName;
         price = item.price;
         tax = 0.0;
-        System.out.println("tax "+ " price "  + tax + price);
     }
 }

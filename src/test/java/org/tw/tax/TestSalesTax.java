@@ -81,11 +81,32 @@ public class TestSalesTax {
             item = provider.createItem(input, item);
         }
         double expetedTax = 50.0;
+        double expetedPrice = 1000.0;
         assertEquals(expetedTax, item.getTax());
+        assertEquals(expetedPrice, item.getPrice());
 
     }
 
+    @Test
+    public void taxShuldBeDoubleForTwoItems() {
+        List<ItemProvider> itemProviders = new ArrayList<>();
+        itemProviders.add(new TaxableItemPrivider());
+        itemProviders.add(new TaxExemptedItemProvider());
+        itemProviders.add(new ImportedItemPrivider());
+        List<String> itemInfo = new ArrayList<>();
+        itemInfo.add("1 imported chocolate bar at 500.00");
+        itemInfo.add("2 phones at 500.00");
+        itemInfo.add("1 book at 500.00");
+        Item item = null;
+        ArrayList<Item> cartList = new ArrayList<>();
+        for(String input : itemInfo) {
+            for (ItemProvider provider : itemProviders) {
+                item = provider.createItem(input, item);
+            }
+            cartList.add(item);
+        }
+        new ReceiptGenerator().generateReceipt(cartList);
+        //assertEquals(2075.0, );
 
-
-
+    }
 }

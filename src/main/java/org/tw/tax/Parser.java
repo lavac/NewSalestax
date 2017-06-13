@@ -10,12 +10,9 @@ public class Parser {
 
         String [] lastPart = itemInfo.split(AT);
         String [] remainingParts = lastPart[0].split(" ");
-        System.out.println(" last  " + lastPart[1]);
         double price = Double.parseDouble(lastPart[1]);
         int quantity = Integer.parseInt(remainingParts[0]);
         String itemName = lastPart[0];
-        System.out.println("item name " + itemName + "  price  "+ price + " " +
-                                   "quantity" + quantity);
         return new Item(itemName, price, quantity);
 
     }
