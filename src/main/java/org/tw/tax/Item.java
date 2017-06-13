@@ -9,6 +9,7 @@ public class Item {
     String itemName;
     double price;
     double tax;
+    int quantity;
 
 
     //multiplying pricw i=with the quantity

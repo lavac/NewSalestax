@@ -13,7 +13,7 @@ public class TestSalesTax {
     public void taxShouldBeCalcualtedForAnTaxableItem()  {
         List<ItemProvider> itemProviders =  new ArrayList<>();
         itemProviders.add(new TaxableItemPrivider());
-        itemProviders.add(new TaxEmotedItemProvider());
+        itemProviders.add(new TaxExemptedItemProvider());
         itemProviders.add(new ImportedItemPrivider());
         String input = "1 music CD at 10.0";
         Item item = null;
@@ -28,7 +28,7 @@ public class TestSalesTax {
     public void taxShouldBeZeroForAnTaxExemptedItem() {
         List<ItemProvider> itemProviders = new ArrayList<>();
         itemProviders.add(new TaxableItemPrivider());
-        itemProviders.add(new TaxEmotedItemProvider());
+        itemProviders.add(new TaxExemptedItemProvider());
         itemProviders.add(new ImportedItemPrivider());
         String input = "1 chocolate at 10.0";
         Item item = null;
@@ -38,5 +38,22 @@ public class TestSalesTax {
         double expetedTax = 0.0;
         assertEquals(expetedTax, item.getTax());
     }
+
+    @Test
+    public void taxShouldReturnforImportedItem() {
+        List<ItemProvider> itemProviders = new ArrayList<>();
+        itemProviders.add(new TaxableItemPrivider());
+        itemProviders.add(new TaxExemptedItemProvider());
+        itemProviders.add(new ImportedItemPrivider());
+        String input = "1 imported phone at 50000.00";
+        Item item = null;
+        for(ItemProvider provider: itemProviders) {
+            item = provider.createItem(input, item);
+        }
+        double expetedTax = 7500.0;
+        assertEquals(expetedTax, item.getTax());
+    }
+
+
 
 }

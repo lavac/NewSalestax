@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Created by lavanya on 6/13/17.
  */
-public class TaxEmotedItemProvider implements ItemProvider {
+public class TaxExemptedItemProvider implements ItemProvider {
 
    List<String> taxExmeptedItem = new ArrayList<String>(5);
 
-    TaxEmotedItemProvider() {
+    TaxExemptedItemProvider() {
         createTaxExemptedItemList();
     }
 
