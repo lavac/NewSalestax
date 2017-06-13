@@ -6,9 +6,9 @@ package org.tw.tax;
 public class Item {
 
     private static final double BASE_RATE = 0.1;
-    private final String itemName;
-    private final double price;
-    private final double tax;
+    String itemName;
+    double price;
+    double tax;
 
 
     //multiplying pricw i=with the quantity
@@ -16,6 +16,10 @@ public class Item {
         this.itemName = itemName;
         this.price = price * quantity;
         tax = price*BASE_RATE * quantity;
+    }
+
+    public Item() {
+
     }
 
     public double getTax() {
