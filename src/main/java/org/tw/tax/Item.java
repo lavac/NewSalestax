@@ -17,6 +17,7 @@ public class Item {
         this.itemName = itemName;
         this.price = price * quantity;
         tax = price*BASE_RATE * quantity;
+        System.out.println("tax "+ " price "  + tax + price);
     }
 
     public Item() {

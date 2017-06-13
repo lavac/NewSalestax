@@ -9,6 +9,7 @@ public class ImportedItem extends Item{
         itemName = item.itemName;
         price = item.price;
         tax = item.getTax() + price*IMPORT_TAX;
+        System.out.println("tax "+ " price "  + tax + price);
     }
 
 

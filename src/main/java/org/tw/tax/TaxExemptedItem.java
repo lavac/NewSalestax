@@ -7,7 +7,9 @@ package org.tw.tax;
 // do i  need to create an seperate object
 public class TaxExemptedItem extends Item {
     public TaxExemptedItem(Item item) {
-        super();
+        itemName = item.itemName;
+        price = item.price;
         tax = 0.0;
+        System.out.println("tax "+ " price "  + tax + price);
     }
 }
