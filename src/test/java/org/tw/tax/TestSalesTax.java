@@ -69,4 +69,23 @@ public class TestSalesTax {
         assertEquals(expetedTax, item.getTax());
     }
 
+    @Test
+    public void taxShouldBeDoubleForTwoItems() {
+        List<ItemProvider> itemProviders = new ArrayList<>();
+        itemProviders.add(new TaxableItemPrivider());
+        itemProviders.add(new TaxExemptedItemProvider());
+        itemProviders.add(new ImportedItemPrivider());
+        String input = "2 imported chocolate bar at 500.00";
+        Item item = null;
+        for(ItemProvider provider: itemProviders) {
+            item = provider.createItem(input, item);
+        }
+        double expetedTax = 50.0;
+        assertEquals(expetedTax, item.getTax());
+
+    }
+
+
+
+
 }
