@@ -22,4 +22,12 @@ public class Receipt {
         return itemInfo + "SalesTax - " + totalTax + " \ntotal - " +
                 totalValue;
     }
+
+    public double getTotalTax() {
+        return totalTax;
+    }
+    public double getTotalValue() {
+        return totalValue;
+    }
+
 }

@@ -1,6 +1,6 @@
 package org.tw.tax;
 
-public class ImportedItemPrivider implements ItemProvider {
+public class ImportedItemProvider implements ItemProvider {
     private static final String IMPORTED_FACTOR = " imported ";
 
     @Override

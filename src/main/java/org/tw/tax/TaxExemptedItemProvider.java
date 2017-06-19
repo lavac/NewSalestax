@@ -3,12 +3,9 @@ package org.tw.tax;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by lavanya on 6/13/17.
- */
 public class TaxExemptedItemProvider implements ItemProvider {
 
-   List<String> taxExmeptedItem = new ArrayList<String>(5);
+   List<String> taxExmeptedItem = new ArrayList<>(5);
 
     TaxExemptedItemProvider() {
         createTaxExemptedItemList();

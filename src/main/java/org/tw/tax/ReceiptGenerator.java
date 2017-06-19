@@ -1,14 +1,11 @@
 package org.tw.tax;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
-     * Created by lavanya on 6/13/17.
-     */
     public class ReceiptGenerator {
 
-
-        public Receipt generateReceipt(ArrayList<Item> cartList) {
+        public Receipt generateReceipt(List<Item> cartList) {
             double totalTax = 0;
             double totalPrice = 0;
             double totalValue = 0;
@@ -20,9 +17,7 @@ import java.util.ArrayList;
             }
             totalValue = totalPrice + totalTax;
             Receipt receipt =  new Receipt(itemDetails, totalTax, totalValue);
-            System.out.println(receipt.toString());
             return receipt;
-
         }
     }
 

@@ -1,8 +1,5 @@
 package org.tw.tax;
 
-/**
- * Created by lavanya on 6/13/17.
- */
 public class ImportedItem extends Item{
     static final double IMPORT_TAX = 0.05;
     public ImportedItem(Item item) {
@@ -10,6 +7,4 @@ public class ImportedItem extends Item{
         price = item.price;
         tax = item.getTax() + price*IMPORT_TAX;
     }
-
-
 }
